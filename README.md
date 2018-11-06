@@ -115,6 +115,7 @@ Returns `Array.<Number|undefined>`
 MIT
 
 
+https://www.cnblogs.com/xiaobajiu/p/7066490.html
 
 多种移动平均计算总结
 
