@@ -113,3 +113,36 @@ Returns `Array.<Number|undefined>`
 - [moving-averages](https://www.npmjs.com/package/moving-averages): The complete collection of utility methods for [Moving average](https://en.wikipedia.org/wiki/Moving_average).
 
 MIT
+
+
+
+多种移动平均计算总结
+
+股票期货里面经常会遇到这些公式，通达信，同花顺，文华，基本都有。作为一个程序员觉得网上比较的思路不清晰，在此做个总结，一目了然。
+
+一.函数简介
+
+MA(x,n)-移动平均，是最简单的n日内的平均值
+
+SMA(x,n,m)-简单移动平均，m为当日的权重，是个0~1之间的值
+
+EMA(x,n)-指数移动平均，这个函数以相关周期为权重进行计算
+
+DMA(x,m)-动态移动平均，这个函数以动态设定的权重m进行计算
+
+TMA(x,p,q)-递归移动平均，这个函数可以完全控制当前周期的权重和上一次值的权重
+
+WMA(x,m)-加权移动平均，这个函数对于近日的权重会比其它函数敏感
+
+二.通用公式
+
+
+(https://images2015.cnblogs.com/blog/550026/201706/550026-20170623105625585-226385750.png)
+
+-------------------------------------------------------------
+
+补充：
+
+这个通用公式的结构大概可以理解为：
+
+当前函数值= 当前权重 X 当前价格 + 当前权重的互补值 X 上一次函数值;
